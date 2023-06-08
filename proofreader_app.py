@@ -3,8 +3,11 @@ import openai
 import os
 import re
 
-# set the OpenAI API key
-openai.api_key = os.environ["OPENAI_API_KEY"]
+# # set the OpenAI API key, from the environment variable
+# openai.api_key = os.environ["OPENAI_API_KEY"]
+
+# set the OpenAI API key, from streamlit secrets.toml file
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 # function to split text into paragraphs
 def split_paragraphs(text):
